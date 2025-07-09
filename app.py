@@ -7,6 +7,10 @@ app = Flask(__name__)
 # Charger les données pharmacie
 with open("pharmacies.json", "r") as f:
     pharmacies = json.load(f)
+    
+@app.route("/", methods=["GET"])
+def home():
+    return "🚀 Bot WhatsApp Pharmacie est en ligne !"
 
 @app.route("/bot", methods=["POST"])
 def bot():
